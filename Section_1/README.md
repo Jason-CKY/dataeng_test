@@ -36,7 +36,7 @@ This pattern matches at the start of the string, any Mr, Mrs, Ms, Miss, Dr, Jr c
 
 End of String pattern: 
 
-`re.compile(r"(Jr|I+V*|V+I*|X+I*V*|DDS|DVM|MD|[PhD])\.?$")`
+`re.compile(r"(Jr|I+V*|V+I*|X+I*V*|DDS|DVM|MD|PhD)\.?$")`
 
 This pattern matches at the end of the string, any Jr, Roman Numerals that start with I, V, and X respectively, DDS, DVM, MD, and PhD character sets with an optional period (`.`) at the end.
 
