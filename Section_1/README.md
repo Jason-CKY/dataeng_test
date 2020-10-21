@@ -20,7 +20,7 @@ The csv file is read using the pandas read_csv function.
 
 A cursory view through the dataset.csv reveals certain problematic name structure such as Salutations at the start of the name like `Mr.`, `Mrs.` and `Miss`, as well as titles or acronyms at the end of the name like `MD`, `DDS`, and `III`.
 
-### Step 1: Removing Prepended zeros to the `price` field
+## Step 1: Removing Prepended zeros to the `price` field
 
 Prepended zeros are captured by the dataframe if the `price` column is read as an object containing strings.
 
@@ -28,8 +28,13 @@ The prepended zeros can be easily ignored by converting the dtype of the `price`
 
 This is done by converting the df['price'] dtype using the `pd.to_numeric` function.
 
+## Step 2: Delete any rows which do not have a `name`
+Rows with no name will show up as a `NaN` in the pandas dataframe.
+These rows can be removed using `pd.dropna(subset=['name'])`.
+The subset argument is passed as name, so only rows with missing name will be removed,
+but not rows with missing price.
 
-### Step 2: Split the `name` field into `first_name`, and `last_name`
+## Step 3: Split the `name` field into `first_name`, and `last_name`
 There are 2 kinds of titles in the name column:
 1. Titles at the start of the name (`Mr.`, `Mrs.`, `etc`)
 2. Titles at the end of the name (`PhD`, `III`, `DVM`, `etc`)

@@ -39,7 +39,10 @@ def main():
     # Step 1: Converting price to numeric to remove prepended zeros
     df['price'] = pd.to_numeric(df['price'])
 
-    # Step 2: Converting names column into first name and last name column
+    # Step 2: Remove rows where the names are missing
+    df = df.dropna(subset=['name'])
+
+    # Step 3: Converting names column into first name and last name column
     names = list(df.name)
     names = clean_names(names)
     # Assigning list of first names to fnames and list of last names to lnames
