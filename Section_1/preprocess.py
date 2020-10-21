@@ -6,6 +6,7 @@ def parse_arguments():
     parser = argparse.ArgumentParser()
 
     parser.add_argument('--fpath', type=str, required=True, help='file path to dataset.csv')
+    parser.add_argument('--spath', type=str, required=True, help='save path to processed dataset.csv')
 
     return parser.parse_args()
 
@@ -53,6 +54,12 @@ def main():
     df['last_name'] = lnames
     # dropping original name column
     df = df.drop('name', 1)
+
+    # Step 4: Create a new field named `above_100`, which is `true` if the price is strictly greater than 100
+    df['above_100'] = df['price'] > 100
+
+    # Save the dataframe back to the original csv file
+    df.to_csv(args.spath, index=False)
 
 
 

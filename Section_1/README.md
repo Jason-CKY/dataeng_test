@@ -62,5 +62,5 @@ After that, we create 2 separate list from this edited names list, containing th
 
 Finally, we remove the original names column from the dataframe.
 
-
-
+## Step 4: Create a new field named `above_100`, which is `true` if the price is strictly greater than 100
+This can be done by creating a pandas Series object using `df['price'] > 100`, and adding this Series as another column on the original dataframe.
