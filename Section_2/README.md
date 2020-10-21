@@ -23,3 +23,14 @@ Each sale transaction contains the following information:
 - Characteristics of car sold
 
 Set up a PostgreSQL database using the base `docker` image [here](https://hub.docker.com/_/postgres) given the above. We expect at least a `Dockerfile` which will stand up your database with the DDL statements to create the necessary tables. Produce entity-relationship diagrams as necessary to illustrate your design.
+
+## Entity-Relationship Diagram
+ <img src = 'Car_Dealership_ERD.png'>
+
+ ## Creating docker image and running container
+
+1. First cd to this folder
+2. run `docker build -t psql_image:latest .`
+3. run `docker run -p 5432:5432 -d --name psql_container psql_image:latest`
+4. run `docker exec -it psql_container psql -U postgres`
+5. connect to db by running `\c car-dealership`

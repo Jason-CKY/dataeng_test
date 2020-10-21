@@ -1,5 +1,5 @@
-DROP DATABASE IF EXISTS CAR_DEALERSHIP;
-CREATE DATABASE CAR_DEALERSHIP;
+-- DROP DATABASE IF EXISTS CAR_DEALERSHIP;
+-- CREATE DATABASE CAR_DEALERSHIP;
 
 CREATE TABLE Manufacturer 
 (
@@ -39,7 +39,7 @@ CREATE TABLE Car
 CREATE TABLE Transaction 
 (
     TransactionID           BIGSERIAL NOT NULL,
-    TransactionDateTime     DATETIME NOT NULL,
+    TransactionDateTime     TIMESTAMP NOT NULL,
     SerialNumber            BIGSERIAL NOT NULL,
     SalesPersonID           BIGSERIAL NOT NULL,
     CustomerID              BIGSERIAL NOT NULL,
