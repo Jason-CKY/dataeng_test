@@ -19,7 +19,7 @@ CREATE TABLE Customer
 (
     CustomerID      BIGSERIAL NOT NULL,
     Name            VARCHAR(50) NOT NULL,
-    PhoneNumber     INT NOT NULL,
+    PhoneNumber     VARCHAR(12) NOT NULL,
     PRIMARY KEY(CustomerID)
 );
 
@@ -31,7 +31,7 @@ CREATE TABLE Car
     CarWeight       FLOAT NOT NULL,
     Engine_CC       INT NOT NULL,
     Price           DECIMAL(12, 2) NOT NULL,
-    ManufacturerID  BIGSERIAL NOT NULL,
+    ManufacturerID  BIGINT NOT NULL,
     PRIMARY KEY(SerialNumber),
     FOREIGN KEY(ManufacturerID) REFERENCES Manufacturer(ManufacturerID) ON DELETE CASCADE
 );
@@ -40,9 +40,9 @@ CREATE TABLE Transaction
 (
     TransactionID           BIGSERIAL NOT NULL,
     TransactionDateTime     TIMESTAMP NOT NULL,
-    SerialNumber            BIGSERIAL NOT NULL,
-    SalesPersonID           BIGSERIAL NOT NULL,
-    CustomerID              BIGSERIAL NOT NULL,
+    SerialNumber            BIGINT NOT NULL,
+    SalesPersonID           BIGINT NOT NULL,
+    CustomerID              BIGINT NOT NULL,
     Primary KEY(TransactionID),
     FOREIGN KEY(SerialNumber) REFERENCES Car(SerialNumber) ON DELETE CASCADE,
     FOREIGN KEY(SalesPersonID) REFERENCES SalesPerson(SalesPersonID) ON DELETE CASCADE,
