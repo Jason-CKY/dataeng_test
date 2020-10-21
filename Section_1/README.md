@@ -64,3 +64,15 @@ Finally, we remove the original names column from the dataframe.
 
 ## Step 4: Create a new field named `above_100`, which is `true` if the price is strictly greater than 100
 This can be done by creating a pandas Series object using `df['price'] > 100`, and adding this Series as another column on the original dataframe.
+
+## Step 5: Scheduling a cron job
+Assuming that the data file will be available at 1am everyday, in `<fpath>`, the cron schedule expression is as follows:
+
+```
+0 1 * * * <path-to-python> <path-to-preprocess.py> --fpath <fpath> --spath <path-to-processed-csv> 
+
+For example:
+
+0 1 * * * /home/jasoncheng01/anaconda3/bin/python /home/jasoncheng01/dataeng_test/Section_1/preprocess.py --fpath /home/jasoncheng01/dataeng_test/Section_1/dataset.csv --spath /home/jasoncheng01/dataeng_test/Section_1/precessed_dataset.csv 
+```
+
