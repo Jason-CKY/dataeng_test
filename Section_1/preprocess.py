@@ -36,10 +36,12 @@ def clean_names(names):
 def main():
     args = parse_arguments()
     df = pd.read_csv(args.fpath)
+    # Step 1: Converting price to numeric to remove prepended zeros
+    df['price'] = pd.to_numeric(df['price'])
+
+    # Step 2: Converting names column into first name and last name column
     names = list(df.name)
     names = clean_names(names)
-    for name in names:
-        print(name)
     # Assigning list of first names to fnames and list of last names to lnames
     fnames = [name.split()[0] for name in names]
     lnames = [name.split()[1] for name in names]
@@ -49,7 +51,7 @@ def main():
     # dropping original name column
     df = df.drop('name', 1)
 
-    
+
 
 if __name__ == '__main__':
     main()
