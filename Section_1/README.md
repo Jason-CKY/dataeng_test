@@ -67,9 +67,10 @@ This can be done by creating a pandas Series object using `df['price'] > 100`, a
 
 ## Step 5: Scheduling a cron job
 Assuming that the data file will be available at 1am everyday, in `<fpath>`, the cron schedule expression is as follows:
+Any error logs is then printed to a logs file with a specified path.
 
 ```
-0 1 * * * <path-to-python> <path-to-preprocess.py> --fpath <fpath> --spath <path-to-processed-csv> 
+0 1 * * * <path-to-python> <path-to-preprocess.py> --fpath <fpath> --spath <path-to-processed-csv> >> <path-to-logs>
 
 For example:
 
