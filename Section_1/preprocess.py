@@ -19,7 +19,7 @@ def clean_names(names):
     Returns:
         filtered_names (List): List of filtered names that only contains <First Name> <Last Name>
     '''
-    start_pattern = re.compile(r"^(\.|Mr|Mrs|Ms|Miss|Dr|Jr)\.?\s")
+    start_pattern = re.compile(r"^(\.|Mr|Mrs|Ms|Miss|Mdm|Madam|Dr|Jr)\.?\s")
     eos_pattern = re.compile(r"(Jr|I+V*|V+I*|X+I*V*|DDS|DVM|MD|PhD)\.?$")
     
     filtered_names = names.copy()

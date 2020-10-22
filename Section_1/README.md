@@ -43,9 +43,9 @@ I made 2 regex patterns to match the 2 kinds of titles.
 
 Start of String pattern: 
 
-`re.compile(r"^(\.|Mr|Mrs|Ms|Miss|Dr|Jr)\.?\s")`
+`re.compile(r"^(\.|Mr|Mrs|Ms|Miss|Mdm|Madam|Dr|Jr)\.?\s")`
 
-This pattern matches at the start of the string, any Mr, Mrs, Ms, Miss, Dr, Jr character sets with an optional period (`.`) at the end, followed by a space.
+This pattern matches at the start of the string, any Mr, Mrs, Ms, Miss, Mdm, Madam, Dr, Jr character sets with an optional period (`.`) at the end, followed by a space.
 
 
 End of String pattern: 
