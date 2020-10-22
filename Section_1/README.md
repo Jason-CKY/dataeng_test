@@ -73,6 +73,6 @@ Assuming that the data file will be available at 1am everyday, in `<fpath>`, the
 
 For example:
 
-0 1 * * * /home/jasoncheng01/anaconda3/bin/python /home/jasoncheng01/dataeng_test/Section_1/preprocess.py --fpath /home/jasoncheng01/dataeng_test/Section_1/dataset.csv --spath /home/jasoncheng01/dataeng_test/Section_1/precessed_dataset.csv 
+0 1 * * * /usr/bin/python3 /home/dataeng_test/Section_1/preprocess.py --fpath /home/dataeng_test/Section_1/dataset.csv --spath /home/dataeng_test/Section_1/processed_dataset.csv >> /home/dataeng_test/Section_1/Error.logs 
 ```
 

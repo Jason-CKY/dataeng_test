@@ -1,6 +1,7 @@
 import pandas as pd
 import argparse
 import re
+import datetime
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
@@ -24,13 +25,14 @@ def clean_names(names):
     
     filtered_names = names.copy()
     for idx in range(len(filtered_names)):
+        original_name = filtered_names[idx]
         r1 = re.search(start_pattern, filtered_names[idx])
         if r1:
             filtered_names[idx] = filtered_names[idx].replace(r1.group(), "").strip()
         r2 = re.search(eos_pattern, filtered_names[idx])
         if r2:
             filtered_names[idx] = filtered_names[idx].replace(r2.group(), "").strip()
-        assert len(filtered_names[idx].split()) == 2, f"names not filtered correctly. Name: {filtered_names[idx]}"
+        assert len(filtered_names[idx].split()) == 2, print(f"[{str(datetime.datetime.now())}] Names not filtered correctly. {original_name} -> {filtered_names[idx]}")
 
     return filtered_names
 
