@@ -25,7 +25,7 @@ Each sale transaction contains the following information:
 Set up a PostgreSQL database using the base `docker` image [here](https://hub.docker.com/_/postgres) given the above. We expect at least a `Dockerfile` which will stand up your database with the DDL statements to create the necessary tables. Produce entity-relationship diagrams as necessary to illustrate your design.
 
 ## Entity-Relationship Diagram
- <img src = 'Car_Dealership_ERD.png'>
+![ERD made in LucidChart](Car_Dealership_ERD.png)
 
  ## Creating docker image and running container
 
